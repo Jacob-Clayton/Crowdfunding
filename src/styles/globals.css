@@ -1,3 +1,18 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+    html {
+        scroll-behavior: smooth;
+        /* give titles some breathing room when scrolled to */
+        scroll-padding-top: 80px;
+    }
+
+    body {
+    @apply bg-gradient-to-b from-slate-100 to-slate-200 text-primary-black;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    }
+}
