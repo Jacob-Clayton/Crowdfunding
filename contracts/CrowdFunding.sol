@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity ^0.8.9;
 
-contract Crowdfunding {
+contract CrowdFunding {
     struct Campaign {
         address owner;
         string title;
@@ -32,7 +32,7 @@ contract Crowdfunding {
 
         numberOfCampaigns++;
 
-        return numberOfCampaigns - 1;
+        return numberOfCampaigns - 1; 
     }
 
     function donateToCampaign(uint256 _id) public payable {

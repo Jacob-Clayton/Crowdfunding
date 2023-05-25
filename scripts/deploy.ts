@@ -1,14 +1,17 @@
 import { ethers } from "hardhat";
 
+// Deployed contract address
+// 0x5FbDB2315678afecb367f032d93F642f64180aa3
+
 async function main() {
 
   const CrowdFunding = await ethers.getContractFactory("CrowdFunding");
-  const crowdfunding = await CrowdFunding.deploy();
+  const crowdFunding = await CrowdFunding.deploy();
 
-  await CrowdFunding.deployed();
+  await CrowdFunding.deploy();
 
   console.log(
-    `Crowdfunding deployed to ${crowdfunding.address}`
+    `CrowdFunding deployed to ${crowdFunding.address}`
   );
 }
 
