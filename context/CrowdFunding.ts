@@ -5,6 +5,7 @@ import { ethers } from "ethers";
 
 // Internal Imports
 import { CrowdFundingABI, CrowdFundingAddress } from "./constants";
+import { CrowdFunding } from "typechain-types";
 
 // Fetch smart contract
 const fetchContract = (signerOrProvider) =>
@@ -155,4 +156,33 @@ export const CrowdFundingProvider = ({ children }) => {
     }, []);
 
     // Connect wallet function
-}
+    const connectWallet = async () => {
+        try {
+            if (!window.ethereum) return console.log("Install metamask");
+
+            const accounts = await window.ethereum.request({
+                method: "eth_requestAccounts",
+            });
+            setCurrentAccount(accounts[0]);
+        } catch (error) {
+            console.log("Error while connecting to wallet");
+        }
+    };
+
+    return (
+        <CrowdFundingContext.Provider
+            value={{
+                titleData,
+                currentAccount,
+                createCampaign,
+                getCampaigns,
+                getUserCampaigns,
+                donate,
+                getDonations,
+                connectWallet,
+            }}
+        >
+            { children }
+        </CrowdFundingContext.Provider>
+    );
+};
