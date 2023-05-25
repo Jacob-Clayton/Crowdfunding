@@ -54,9 +54,18 @@ contract Crowdfunding {
         return (campaigns[_id].donators, campaigns[_id].donations);
     }
 
+    // Function to return all campaigns when campaigns are requested
     function getCampaigns() public view returns (Campaign[] memory) {
+        // Storing campaign in memory not in a variable
         Campaign[] memory allCampaigns = new Campaign[](numberOfCampaigns);
 
-        for(uint i = )
+        // For loop to store the data
+        for(uint i = 0; i < numberOfCampaigns; i++) {
+            Campaign storage item = campaigns[i];
+            
+            allCampaigns[i] = item;
+        }
+
+        return allCampaigns;
     }
 }
