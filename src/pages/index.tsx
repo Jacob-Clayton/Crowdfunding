@@ -1,7 +1,6 @@
 import { type NextPage } from "next";
 import Head from "next/head";
-import Link from "next/link";
-import { Navbar, Footer, Menu, Logo } from "components";
+import { Navbar, Footer, Menu } from "components";
 
 const Home: NextPage = () => {
   return (
