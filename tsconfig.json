@@ -24,10 +24,11 @@
   "include": [
     ".eslintrc.cjs",
     "next-env.d.ts",
+    "**/*.js",
     "**/*.ts",
     "**/*.tsx",
     "**/*.cjs",
     "**/*.mjs"
-  ],
+, "context/CrowdFunding.js"  ],
   "exclude": ["node_modules"]
 }

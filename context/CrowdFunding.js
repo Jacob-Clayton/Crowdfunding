@@ -5,7 +5,6 @@ import { ethers } from "ethers";
 
 // Internal Imports
 import { CrowdFundingABI, CrowdFundingAddress } from "./constants";
-import { CrowdFunding } from "typechain-types";
 
 // Fetch smart contract
 const fetchContract = (signerOrProvider) =>

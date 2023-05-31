@@ -1,6 +1,6 @@
 import { type NextPage } from "next";
 import Head from "next/head";
-import { Navbar, Footer, Menu, Logo } from "components";
+import { Navbar, Footer } from "components";
 
 const Home: NextPage = () => {
   return (
@@ -12,8 +12,6 @@ const Home: NextPage = () => {
       </Head>
       <main className="flex min-h-screen flex-col items-center justify-center">
         <Navbar />
-        <Menu color="text-black" />
-        <Logo color="text-black" />
         <Footer />
       </main>
     </>
