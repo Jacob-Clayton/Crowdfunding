@@ -2,8 +2,17 @@ import React, { useState, useContext } from "react"
 import { CrowdFundingContext } from "context/CrowdFunding"
 import { Logo, Menu } from "components/index"
 import Link from "next/link"
+import { Jost } from "next/font/google"
+import styles from "~/styles"
+import Tooltip from "./Tooltip"
 
-const menuList = ["Litepaper", "Project", "Donations", "Members"];
+const jost = Jost({
+    subsets: ['latin'],
+    display: 'swap',
+    variable: '--font-jost',
+})
+
+const menuList = ["Charities", "Donations", "Members", "Litepaper"];
 
 type MobileNavProps = {
     open: boolean;
@@ -41,17 +50,19 @@ function MobileNav({open, setOpen} :MobileNavProps) {
                             </Link>
                         </li>
                     ))}
-                    <li>
-                        <Link
-                            href={'/'}
-                            aria-label="sign-up"
-                            title="sign up"
-                            onClick={() => connectWallet()}
-                            className="inline-flex items-center justify-center bg-primary-black h-12 px-6 duration-200 rounded shadow-md"
-                        >
-                            <h3 className="tracking wide text-off-white">Connect Wallet</h3>
-                        </Link>
-                    </li>
+                    {!currentAccount && (
+                        <li>
+                            <Link
+                                href={'/'}
+                                aria-label="sign-up"
+                                title="sign up"
+                                onClick={() => connectWallet()}
+                                className="inline-flex items-center justify-center bg-primary-black py-2 px-6 rounded shadow-md"
+                            >
+                                <p className="text-off-white font-normal">Connect Wallet</p>
+                            </Link>
+                        </li>
+                    )}
                 </ul>
             </div>
         </div>
@@ -64,22 +75,24 @@ const Navbar = () => {
 
     return (
         <nav className="fixed top-0 right-0 left-0 w-full border-b-[1px] border-gray-300 bg-slate-100">
-            <div className="mx-auto max-w-[90%] sm:max-w-[90%] md:max-w-[90%] lg:max-w-[90%] 2xl:max-w-screen-xl">
+            <div className={`mx-auto ${styles.innerWidth}`}>
                 <div className=" flex items-center justify-between h-[100px]">
                     <div className="flex items-center">
                         <Link href="/" aria-label="Company" title="Company" className="inline-flex items-center">
                             <Logo color="text-black" />
-                            <h3 className="ml-2 tracking-wide">Web3 Giving</h3>
+                            <h3 className={`${jost.variable} font-jost font-normal ml-2 tracking-wide hover-underline-animation-b`}>Web3 Giving</h3>
                         </Link>
                     </div>
                     <div className="flex items-center">
                         <ul className="items-center hidden space-x-8 lg:flex">
                             {menuList.map((element,i) => (
+                                <Tooltip message={'Demo button only'}>
                                 <li key={i + 1}>
-                                    <Link href={'/'} aria-label="Our Product" title="Our Product">
-                                        <p className="font-normal">{element}</p>
+                                    <Link href={'/'} aria-label="Our Product">
+                                        <p className="font-normal hover-underline-animation-b">{element}</p>
                                     </Link>
                                 </li>
+                                </Tooltip>
                             ))}
                         </ul>
                     </div>
@@ -89,11 +102,11 @@ const Navbar = () => {
                                 <li>
                                     <button 
                                         onClick={() => connectWallet()}
-                                        className="inline-flex items-center justify-center h-12 px-6 duration-500 rounded hover:shadow-md bg-primary-black hover: focus:shadow-outline focus:outline-none"
+                                        className="inline-flex items-center justify-center py-2 px-6 duration-500 rounded hover:shadow-md bg-primary-black hover: focus:shadow-outline focus:outline-none"
                                         aria-label="Sign-up"
                                         title="Sign up"
                                     >
-                                        <p className="text-off-white">Connect Wallet</p>
+                                        <p className="text-off-white font-normal">Connect Wallet</p>
                                     </button>
                                 </li>
                             </ul>

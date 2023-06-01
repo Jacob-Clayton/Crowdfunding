@@ -49,3 +49,27 @@
     bottom: -1.9rem;
     z-index: 3;
 }
+
+/* Left to right underline animation when hover on text */
+.hover-underline-animation-b {
+    display: inline-block;
+    position: relative;
+}
+
+.hover-underline-animation-b::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 1px;
+    bottom: 0;
+    left: 0;
+    background-color: #180D4C;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+
+.hover-underline-animation-b:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
