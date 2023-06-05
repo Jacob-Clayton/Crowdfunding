@@ -1,8 +1,34 @@
 import { type NextPage } from "next";
+import React, { useEffect, useContext, useState } from 'react';
 import Head from "next/head";
-import { Navbar, Footer } from "components";
+
+import { CrowdFundingContext } from "context/CrowdFunding";
+import { Navbar, Footer, Hero, Card, PopUp } from "components";
 
 const Home: NextPage = () => {
+  const {
+    titleData,
+    getCampaigns,
+    createCampaign,
+    donate,
+    getUserCampaigns,
+    getDontaions,
+  } = useContext(CrowdFundingContext);
+
+  const [allcampaign, setAllcampaign] = useState();
+  const [usercampaign, setUsercampaign] = useState();
+
+  useEffect(() => {
+    const getCampaignsData = getCampaigns();
+    const userCampaignsData = getUserCampaigns();
+    return async () => {
+      const allData = await getCampaignsData;
+      const userData = await userCampaignsData;
+      setAllcampaign(allData);
+      setUsercampaign(userData);
+    };
+  }, []);
+
   return (
     <>
       <Head>
