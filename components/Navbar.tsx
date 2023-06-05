@@ -79,8 +79,8 @@ const Navbar = () => {
                 <div className=" flex items-center justify-between h-[100px]">
                     <div className="flex items-center">
                         <Link href="/" aria-label="Company" title="Company" className="inline-flex items-center">
-                            <Logo color="text-black" />
-                            <h3 className={`${jost.variable} font-jost font-normal ml-2 tracking-wide hover-underline-animation-b`}>Web3 Giving</h3>
+                            <Logo color="#000000" />
+                            <h3 className={`${jost.variable} font-jost font-normal ml-2 tracking-wide`}>Web3 Giving</h3>
                         </Link>
                     </div>
                     <div className="flex items-center">
