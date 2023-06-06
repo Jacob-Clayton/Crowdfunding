@@ -1,5 +1,5 @@
 import React, { useState, useContext } from "react"
-import { CrowdFundingContext } from "context/CrowdFunding"
+import { CrowdFundingContext } from "context/CrowdFunding.js"
 import { Logo, Menu } from "components/index"
 import Link from "next/link"
 import { Jost } from "next/font/google"

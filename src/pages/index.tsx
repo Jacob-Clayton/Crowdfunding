@@ -2,7 +2,7 @@ import { type NextPage } from "next";
 import React, { useEffect, useContext, useState } from 'react';
 import Head from "next/head";
 
-import { CrowdFundingContext } from "context/CrowdFunding";
+import { CrowdFundingContext } from "context/CrowdFunding.js";
 import { Navbar, Footer, Hero, Card, PopUp } from "components";
 
 const Home: NextPage = () => {
@@ -18,14 +18,19 @@ const Home: NextPage = () => {
   const [allcampaign, setAllcampaign] = useState();
   const [usercampaign, setUsercampaign] = useState();
 
+  //Had to put the asynchronous logic inside a seperate function 'fetchData' to be compatiable with the useEffect hook
   useEffect(() => {
-    const getCampaignsData = getCampaigns();
-    const userCampaignsData = getUserCampaigns();
-    return async () => {
+    const fetchData = async () => {
+      const getCampaignsData = getCampaigns();
+      const userCampaignsData = getUserCampaigns();
       const allData = await getCampaignsData;
       const userData = await userCampaignsData;
       setAllcampaign(allData);
       setUsercampaign(userData);
+    };
+    fetchData();
+
+    return () => {
     };
   }, []);
 
