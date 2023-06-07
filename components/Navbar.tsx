@@ -23,12 +23,12 @@ function MobileNav({open, setOpen} :MobileNavProps) {
     const { currentAccount, connectWallet } = useContext(CrowdFundingContext);
 
     return (
-        <div className={`absolute top-0 w-[70%] p-5 px-10 bg-slate-100 border border-gray-300 shadow rounded-bl-xl ${open ? "right-0" : "transform translate-x-full"} transition-transform duration-200 ease-in-out`}>
-            <div className="flex items-center justify-end">
+        <div className={` absolute top-0 sm:w-[60%] w-[70%] p-5 px-10 bg-slate-100 border border-gray-300 shadow rounded-bl-xl ${open ? "right-0" : "transform translate-x-full"} transition-transform duration-200 ease-in-out`}>
+            <div className={`flex items-center justify-end`}>
                 <button
                     aria-label="close menu"
                     title="close menu"
-                    className="py-4 duration-200 rounded hover:bg-gray-300 focus:bg-gray-300 focus:outline-none"
+                    className="my-4 mr-4 duration-200 rounded hover:bg-gray-300 focus:bg-gray-300 focus:outline-none"
                     onClick={() => setOpen(false)}
                 >
                     <svg width="32px" height="32px" viewBox="0 0 24 24" fill="none">
@@ -74,7 +74,7 @@ const Navbar = () => {
     const [open, setOpen] = useState(false);
 
     return (
-        <nav className="fixed top-0 right-0 left-0 w-full border-b-[1px] border-gray-300 bg-slate-100">
+        <nav className="z-10 fixed top-0 right-0 left-0 w-full border-b-[1px] border-gray-300 bg-slate-100">
             <div className={`mx-auto ${styles.innerWidth}`}>
                 <div className=" flex items-center justify-between h-[100px]">
                     <div className="flex items-center">

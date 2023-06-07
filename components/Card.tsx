@@ -2,7 +2,7 @@
 
 const Card = () => {
     return (
-        <div>Card</div>
+        <div className="h-[400px]">Card</div>
     )
 }
 

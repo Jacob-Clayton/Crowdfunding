@@ -11,7 +11,7 @@ const jost = Jost({
 
 const Footer = () => {
     return (
-        <footer className="fixed bottom-0 w-full border-t-[1px] border-gray-300 bg-primary-black">
+        <footer className="absolute bottom-0 w-full border-t-[1px] border-gray-500 bg-primary-black">
             <div className={`${styles.innerWidth} pt-12 mx-auto text-off-white`}>
                 <div className="grid gap-16 row-gap-10 mb-8 lg:grid-cols-6">
                 <div className="md:max-w-md lg:col-span-2">

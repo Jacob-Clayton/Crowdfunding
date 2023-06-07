@@ -1,6 +1,6 @@
 // External Imports
 import React, { useEffect, useState } from "react";
-import Wenb3Modal from 'web3modal';
+import Web3Modal from 'web3modal';
 import { ethers } from "ethers";
 
 // Internal Imports
@@ -18,7 +18,7 @@ export const CrowdFundingProvider = ({ children }) => {
 
     const createCampaign = async (campaign) => {
         const { title, description, amount, deadline } = campaign;
-        const web3Modal = new Wenb3Modal();
+        const web3Modal = new Web3Modal();
         const connection = await web3Modal.connect();
         const provider = new ethers.providers.Web3Provider(connection);
         const signer = provider.getSigner();
@@ -95,7 +95,7 @@ export const CrowdFundingProvider = ({ children }) => {
     }
 
     const donate = async (pId, amount) => {
-        const web3Modal = new Wenb3Modal();
+        const web3Modal = new Web3Modal();
         const connection = await web3Modal.connect();
         const provider = new ethers.providers.Web3Provider(connection);
         const signer = provider.getSigner();
