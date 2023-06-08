@@ -3,7 +3,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 import styles from '~/styles';
 import { Jost } from 'next/font/google';
-import Tooltip from "./Tooltip";
 
 const jost = Jost({
   subsets: ['latin'],
