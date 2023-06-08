@@ -17,7 +17,7 @@
     }
 
     h1 {
-        @apply font-semibold text-primary-black 2xl:text-[55px] lg:text-[50px] md:text-[45px] sm:text-[45px] text-[40px] 2xl:leading-[60px] lg:leading-[55px] md:leading-[50px] sm:leading-[45px] leading-[40px];
+        @apply font-medium text-primary-black 2xl:text-[55px] lg:text-[50px] md:text-[45px] sm:text-[45px] text-[40px] 2xl:leading-[60px] lg:leading-[55px] md:leading-[50px] sm:leading-[45px] leading-[40px];
     }
 
     h2 {
@@ -31,23 +31,6 @@
     p {
         @apply font-light text-primary-black 2xl:text-xl xl:text-[19px] md:text-lg sm:text-[17px] text-[16px] 2xl:leading-[27px] xl:leading-[26px] lg:leading-[25px] md:leading-[24px] sm:leading-[22px] leading-[21px];
     }
-}
-
-.newColor {
-    color: #1a1a1a;
-}
-
-.backgroundMain {
-    background-color: #1a1a1a;
-}
-
-.coverLine {
-    width: 100%;
-    height: 2rem;
-    background-color: white;
-    position: absolute;
-    bottom: -1.9rem;
-    z-index: 3;
 }
 
 /* Left to right underline animation when hover on text */
@@ -70,6 +53,29 @@
 }
 
 .hover-underline-animation-b:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+.hover-underline-animation-w {
+    display: inline-block;
+    position: relative;
+}
+
+.hover-underline-animation-w::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 1px;
+    bottom: 0;
+    left: 0;
+    background-color: #fafafa;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+
+.hover-underline-animation-w:hover::after {
     transform: scaleX(1);
     transform-origin: bottom left;
 }

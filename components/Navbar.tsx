@@ -23,7 +23,7 @@ function MobileNav({open, setOpen} :MobileNavProps) {
     const { currentAccount, connectWallet } = useContext(CrowdFundingContext);
 
     return (
-        <div className={` absolute top-0 sm:w-[60%] w-[70%] p-5 px-10 bg-slate-100 border border-gray-300 shadow rounded-bl-xl ${open ? "right-0" : "transform translate-x-full"} transition-transform duration-200 ease-in-out`}>
+        <div className={`absolute top-0 sm:w-[60%] w-[70%] p-5 px-10 bg-slate-100 border border-gray-300 shadow rounded-bl-xl ${open ? "right-0" : "transform translate-x-full"} transition-transform duration-200 ease-in-out`}>
             <div className={`flex items-center justify-end`}>
                 <button
                     aria-label="close menu"
@@ -74,13 +74,13 @@ const Navbar = () => {
     const [open, setOpen] = useState(false);
 
     return (
-        <nav className="z-10 fixed top-0 right-0 left-0 w-full border-b-[1px] border-gray-300 bg-slate-100">
+        <nav className="z-20 fixed top-0 right-0 left-0 w-full border-b-[1px] border-gray-300 border-opacity-20 bg-primary-black">
             <div className={`mx-auto ${styles.innerWidth}`}>
                 <div className=" flex items-center justify-between h-[100px]">
                     <div className="flex items-center">
                         <Link href="/" aria-label="Company" title="Company" className="inline-flex items-center">
-                            <Logo color="#000000" />
-                            <h3 className={`${jost.variable} font-jost font-normal ml-2 tracking-wide`}>Web3 Giving</h3>
+                            <Logo color="#fafafa" />
+                            <h3 className={`${jost.variable} font-jost font-normal ml-2 tracking-wide text-off-white`}>Web3 Giving</h3>
                         </Link>
                     </div>
                     <div className="flex items-center">
@@ -89,7 +89,7 @@ const Navbar = () => {
                                 <Tooltip message={'Demo button only'}>
                                 <li key={i + 1}>
                                     <Link href={'/'} aria-label="Our Product">
-                                        <p className="font-normal hover-underline-animation-b">{element}</p>
+                                        <p className="font-normal hover-underline-animation-w text-off-white">{element}</p>
                                     </Link>
                                 </li>
                                 </Tooltip>
@@ -102,11 +102,11 @@ const Navbar = () => {
                                 <li>
                                     <button 
                                         onClick={() => connectWallet()}
-                                        className="inline-flex items-center justify-center py-2 px-6 duration-500 rounded hover:shadow-md bg-primary-black hover: focus:shadow-outline focus:outline-none"
+                                        className="inline-flex items-center justify-center py-2 px-6 duration-500 rounded hover:shadow-md bg-off-white focus:shadow-outline focus:outline-none"
                                         aria-label="Sign-up"
                                         title="Sign up"
                                     >
-                                        <p className="text-off-white font-normal">Connect Wallet</p>
+                                        <p className="text-primary-black font-normal">Connect Wallet</p>
                                     </button>
                                 </li>
                             </ul>
