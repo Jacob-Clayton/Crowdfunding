@@ -126,14 +126,14 @@ const Footer = () => {
                     </ul>
                     </div>
                     <div>
-                    <p className="font-semibold tracking-wide text-off-white">Litepaper</p>
+                    <p className="font-semibold tracking-wide text-off-white">Team</p>
                     <ul className="mt-2 space-y-2">
                         <li>
                         <Link
                             href="/"
                             className="text-off-white transition-colors duration-300 hover:text-deep-purple-accent-400"
                         >
-                            Infopreneur
+                            Founders
                         </Link>
                         </li>
                         <li>
@@ -141,7 +141,7 @@ const Footer = () => {
                             href="/"
                             className="text-off-white transition-colors duration-300 hover:text-deep-purple-accent-400"
                         >
-                            Personal
+                            Vision
                         </Link>
                         </li>
                         <li>
@@ -149,7 +149,7 @@ const Footer = () => {
                             href="/"
                             className="text-off-white transition-colors duration-300 hover:text-deep-purple-accent-400"
                         >
-                            Wiki
+                            Careers
                         </Link>
                         </li>
                     </ul>

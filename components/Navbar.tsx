@@ -23,7 +23,7 @@ function MobileNav({open, setOpen} :MobileNavProps) {
     const { currentAccount, connectWallet } = useContext(CrowdFundingContext);
 
     return (
-        <div className={`absolute top-0 sm:w-[60%] w-[70%] p-5 px-10 bg-slate-100 border border-gray-300 shadow rounded-bl-xl ${open ? "right-0" : "transform translate-x-full"} transition-transform duration-200 ease-in-out`}>
+        <div className={`absolute top-0 sm:w-[60%] w-[70%] p-5 px-10 bg-black border-l border-b border-gray-300 border-opacity-30 shadow rounded-bl-xl ${open ? "right-0" : "transform translate-x-full"} transition-transform duration-200 ease-in-out`}>
             <div className={`flex items-center justify-end`}>
                 <button
                     aria-label="close menu"
@@ -32,7 +32,7 @@ function MobileNav({open, setOpen} :MobileNavProps) {
                     onClick={() => setOpen(false)}
                 >
                     <svg width="32px" height="32px" viewBox="0 0 24 24" fill="none">
-                        <path d="M19 5L5 19M5.00001 5L19 19" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M19 5L5 19M5.00001 5L19 19" stroke="#fafafa" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
                 </button>
             </div>
@@ -46,7 +46,7 @@ function MobileNav({open, setOpen} :MobileNavProps) {
                                 title="our product"
                                 onClick={() => setOpen(false)}
                             >
-                                <p className="font-normal">{element}</p>
+                                <p className="font-normal text-off-white">{element}</p>
                             </Link>
                         </li>
                     ))}
@@ -57,9 +57,9 @@ function MobileNav({open, setOpen} :MobileNavProps) {
                                 aria-label="sign-up"
                                 title="sign up"
                                 onClick={() => connectWallet()}
-                                className="inline-flex items-center justify-center bg-primary-black py-2 px-6 rounded shadow-md"
+                                className="inline-flex items-center justify-center bg-off-white py-2 px-6 rounded shadow-md"
                             >
-                                <p className="text-off-white font-normal">Connect Wallet</p>
+                                <p className="text-primary-black font-normal">Connect Wallet</p>
                             </Link>
                         </li>
                     )}
@@ -74,7 +74,7 @@ const Navbar = () => {
     const [open, setOpen] = useState(false);
 
     return (
-        <nav className="z-20 fixed top-0 right-0 left-0 w-full border-b-[1px] border-gray-300 border-opacity-20 bg-primary-black">
+        <nav className="z-20 fixed top-0 right-0 left-0 w-full border-b-[1px] border-gray-300 border-opacity-30 bg-black">
             <div className={`mx-auto ${styles.innerWidth}`}>
                 <div className=" flex items-center justify-between h-[100px]">
                     <div className="flex items-center">
@@ -120,7 +120,7 @@ const Navbar = () => {
                             className="p-2 -mr-1 duration-200 rounded focus:outline-none focus:shadow"
                             onClick={() => setOpen(!open)}
                         >
-                            <Menu color="text-black" />
+                            <Menu color="text-white" />
                         </button>
                         <MobileNav open={open} setOpen={setOpen} />
                     </div>

@@ -30,30 +30,30 @@ const Hero = ({ titleData, createCampaign }) => {
   };
 
   return (
-    <div className={`relative w-full h-screen `}>
-      <div className={`relative h-full`}>
+    <div className={` w-full h-screen`}>
+      <div className={`relative h-full lg:mt-0 mt-16`}>
         <Image src={'/hands.jpg'} width={1920} height={1200} alt='hands' className='w-full h-full absolute inset-0 object-cover' />        
         <div className='relative bg-primary-black bg-opacity-30 h-full'>
           <img src={'/wave.svg'} className='absolute inset-x-0 bottom-0' />
 
           <div className={`${styles.innerWidth} absolute flex inset-0 mx-auto justify-center z-10 overflow-hidden sm:max-w-xl md:max-w-full lg:max-w-screen-xl`}>
-          <div className={`flex flex-col items-center lg:justify-between justify-center lg:flex-row gap-6 max-w-xl lg:max-w-full`}>
+          <div className={`flex flex-col lg:mt-0 mt-16 items-center lg:flex-row gap-6 max-w-xl lg:max-w-full`}>
             
             <div className='w-full lg:w-2/3 mx-auto'>
               <h1 className={`${jost.variable} font-jost text-off-white mb-6 lg:w-5/6`}>Transparent Fundraising with Blockchain</h1>
               <p className='mb-4 lg:w-5/6 text-off-white'>A charity fundraising platform leveraging blockchain technology to enable transparent donations and spending.</p>
               <Link href={'/'} aria-label='Link' className='inline-flex items-center hover-underline-animation-w'>
-                <span className='flex gap-1'><p className='text-off-white'>Learn More</p><Image src={'/question.svg'} alt='question mark' height={16} width={16} /></span>
+                <span className='flex gap-2'><p className='text-off-white'>Learn More</p><Image src={'/arrow-right.svg'} alt='question mark' height={14} width={14} /></span>
               </Link>
             </div>
 
-            <div className={`w-full max-w-xl lg:w-1/2`}>
-              <div className='bg-slate-200 bg-opacity-40 rounded shadox-2xl p-6 sm:p-8 text-off-white'>
-                <h3 className='mb-1 sm:mb-3 sm:text-center text-off-white'>Create Campaign</h3>
+            <div className={`w-full lg:w-1/2`}>
+              <div className='bg-off-white bg-opacity-90 rounded shadow-2xl p-6 sm:p-8 '>
+                <h3 className={`mb-1 sm:mb-3 sm:text-center`}>Create Campaign</h3>
                 <form>
 
                   <div className=''>
-                    <label htmlFor='firstName' className='inline-block mb-1 px-1'>
+                    <label htmlFor='title' className='inline-block mb-1 px-1'>
                       Title
                     </label>
                     <input 
@@ -66,14 +66,14 @@ const Hero = ({ titleData, createCampaign }) => {
                       placeholder='Title'
                       required
                       type='text'
-                      className='flex-grow w-full py-2 px-4 mb-2 transition duration-200 bg-primary-black bg-opacity-80 border-gray-300 rounded shadow-sm appearance-none focus:outline-none focus:shadow-outline'
-                      id='firstName'
-                      name='firstName'
+                      className='flex-grow w-full py-2 px-4 mb-2 transition duration-200 border-gray-300 border rounded shadow-sm appearance-none focus:outline-none focus:shadow-outline'
+                      id='title'
+                      name='title'
                     />
                   </div>
 
                   <div className=''>
-                    <label htmlFor='lastName' className='inline-block mb-1 px-1'>
+                    <label htmlFor='description' className='inline-block mb-1 px-1'>
                       Description
                     </label>
                     <input 
@@ -86,14 +86,14 @@ const Hero = ({ titleData, createCampaign }) => {
                       placeholder='Description'
                       required
                       type='text'
-                      className='flex-grow w-full py-2 px-4 mb-2 transition duration-200 bg-primary-black bg-opacity-80 border-gray-300 rounded shadow-sm appearance-none focus:outline-none focus:shadow-outline'
-                      id='lastName'
-                      name='lastName'
+                      className='flex-grow w-full py-2 px-4 mb-2 transition duration-200 border-gray-300 border rounded shadow-sm appearance-none focus:outline-none focus:shadow-outline'
+                      id='description'
+                      name='description'
                     />
                   </div>
 
                   <div className=''>
-                    <label htmlFor='email' className='inline-block mb-1 px-1'>
+                    <label htmlFor='amount' className='inline-block mb-1 px-1'>
                       Target Amount
                     </label>
                     <input 
@@ -103,17 +103,17 @@ const Hero = ({ titleData, createCampaign }) => {
                           amount: e.target.value,
                         })
                       }}
-                      placeholder='Amount'
+                      placeholder='Amount (ETH)'
                       required
-                      type='text'
-                      className='flex-grow w-full py-2 px-4 mb-2 transition duration-200 bg-primary-black bg-opacity-80 border-gray-300 rounded shadow-sm appearance-none focus:outline-none focus:shadow-outline'
-                      id='email'
-                      name='email'
+                      type='number'
+                      className='flex-grow w-full py-2 px-4 mb-2 transition duration-200 border-gray-300 border rounded shadow-sm appearance-none focus:outline-none focus:shadow-outline'
+                      id='amount'
+                      name='amount'
                     />
                   </div>
 
                   <div className=''>
-                    <label htmlFor='email' className='inline-block mb-1 px-1'>
+                    <label htmlFor='date' className='inline-block mb-1 px-1'>
                       Deadline
                     </label>
                     <input 
@@ -126,13 +126,13 @@ const Hero = ({ titleData, createCampaign }) => {
                       placeholder='Date'
                       required
                       type='date'
-                      className='flex-grow w-full py-2 px-4 mb-2 transition duration-200 bg-primary-black bg-opacity-80 border-gray-300 rounded shadow-sm appearance-none focus:outline-none focus:shadow-outline'
-                      id='email'
-                      name='email'
+                      className='flex-grow w-full py-2 px-4 mb-2 transition duration-200 border-gray-300 border rounded shadow-sm appearance-none focus:outline-none focus:shadow-outline'
+                      id='date'
+                      name='date'
                     />
                   </div>
 
-                  <div className='mt-4 mb-2 sm:mb-4'>
+                  <div className='mt-4 mb-2'>
                     <button
                       onClick={(e) => createNewCampaign(e)}
                       type='submit'
@@ -141,8 +141,7 @@ const Hero = ({ titleData, createCampaign }) => {
                       Create Campaign
                     </button>
                   </div>
-                  <p className='text-xs sm:text-sm text-center text-off-white'>Start your Web3 fundraiser now</p>
-
+                  <p className='text-xs sm:text-sm text-center'>Start your Web3 fundraiser now</p>
                 </form>
               </div>
             </div>
