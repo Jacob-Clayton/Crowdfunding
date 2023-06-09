@@ -13,19 +13,20 @@ const Card = ({ allcampaign, setOpenModel, setDonate, title }) => {
     };
 
     return (
-        <div className={`${styles.innerWidth} mx-auto h-[600px] mt-10 mb-10`}>
+        <div className={`${styles.innerWidth} mx-auto mt-10 mb-10`}>
             <h3>{title}</h3>
             <div className='grid gap-5 lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 mt-10'>
+
                 <div 
                     onClick={() => (setDonate(campaign), setOpenModel(true))} 
-                    className='cursor-pointer border overflow-hidden transition-shadow duration-300 rounded'
+                    className='cursor-pointer overflow-hidden transition-shadow duration-300 rounded'
                 >
                     <Image src={'/hands.jpg'} alt={'image'} height={300} width={400} className='w-full object-cover rounded-t mx-auto'/>
                     <div className='pb-3 pt-0 space-y-2'>
                         <span className='block bg-primary-black bg-opacity-30 rounded-b'>
                             <span className='flex justify-between px-2 py-1'>
-                                <span><p className='text-xs sm:text-sm'>Days Left: 30</p></span>
-                                <span><p className=' text-xs sm:text-sm'>Raised: 10/30</p></span>
+                                <span><p className='font-medium text-xs sm:text-sm'>Days Left: 30</p></span>
+                                <span><p className='font-medium text-xs sm:text-sm'>Raised: 10/30 Eth</p></span>
                             </span>
                         </span>
                         <div className='px-2'>
@@ -34,7 +35,48 @@ const Card = ({ allcampaign, setOpenModel, setDonate, title }) => {
                             </Link>
                             <p className=''>Help us to save the turtles by fishing out plastics</p>
                         </div>
-                        
+                    </div>
+                </div>
+
+                <div 
+                    onClick={() => (setDonate(campaign), setOpenModel(true))} 
+                    className='cursor-pointer overflow-hidden transition-shadow duration-300 rounded'
+                >
+                    <Image src={'/hands.jpg'} alt={'image'} height={300} width={400} className='w-full object-cover rounded-t mx-auto'/>
+                    <div className='pb-3 pt-0 space-y-2'>
+                        <span className='block bg-primary-black bg-opacity-30 rounded-b'>
+                            <span className='flex justify-between px-2 py-1'>
+                                <span><p className='font-medium text-xs sm:text-sm'>Days Left: 30</p></span>
+                                <span><p className='font-medium text-xs sm:text-sm'>Raised: 10/30 Eth</p></span>
+                            </span>
+                        </span>
+                        <div className='px-2'>
+                            <Link href={'/'} aria-label='article' className=''>
+                                <h3 className=''>Ocean clean up</h3>
+                            </Link>
+                            <p className=''>Help us to save the turtles by fishing out plastics</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div 
+                    onClick={() => (setDonate(campaign), setOpenModel(true))} 
+                    className='cursor-pointer overflow-hidden transition-shadow duration-300 rounded'
+                >
+                    <Image src={'/hands.jpg'} alt={'image'} height={300} width={400} className='w-full object-cover rounded-t mx-auto'/>
+                    <div className='pb-3 pt-0 space-y-2'>
+                        <span className='block bg-primary-black bg-opacity-30 rounded-b'>
+                            <span className='flex justify-between px-2 py-1'>
+                                <span><p className='font-medium text-xs sm:text-sm'>Days Left: 30</p></span>
+                                <span><p className='font-medium text-xs sm:text-sm'>Raised: 10/30 Eth</p></span>
+                            </span>
+                        </span>
+                        <div className='px-2'>
+                            <Link href={'/'} aria-label='article' className=''>
+                                <h3 className=''>Ocean clean up</h3>
+                            </Link>
+                            <p className=''>Help us to save the turtles by fishing out plastics</p>
+                        </div>
                     </div>
                 </div>
                 
@@ -52,6 +94,10 @@ const Card = ({ allcampaign, setOpenModel, setDonate, title }) => {
                                 <h3>campaign title{campaign.title}</h3>
                             </Link>
                             <p>campaign description{campaign.description}</p>
+                            <div className='flex space-x-4'>
+                                <p>Target: {campaign.target} ETH</p>
+                                <p>Raised: {campaign.ammountCollected} ETH</p>
+                            </div>
                         </div>
                     </div>
                 ))}

@@ -10,14 +10,14 @@
     }
 
     body {
-        @apply bg-gradient-to-b from-slate-100 to-slate-200 text-primary-black;
+        @apply bg-off-white text-primary-black;
         box-sizing: border-box;
         margin: 0;
         padding: 0;
     }
 
     h1 {
-        @apply font-medium text-primary-black 2xl:text-[55px] lg:text-[50px] md:text-[45px] sm:text-[45px] text-[40px] 2xl:leading-[60px] lg:leading-[55px] md:leading-[50px] sm:leading-[45px] leading-[40px];
+        @apply font-medium text-primary-black 2xl:text-[65px] xl:text-[58px] lg:text-[50px] md:text-[45px] sm:text-[45px] text-[40px] 2xl:leading-[68px] xl:leading-[62px] lg:leading-[55px] md:leading-[50px] sm:leading-[45px] leading-[40px];
     }
 
     h2 {

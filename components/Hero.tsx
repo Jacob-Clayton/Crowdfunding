@@ -38,21 +38,21 @@ const Hero = ({ titleData, createCampaign }) => {
           <div className={`${styles.innerWidth} absolute flex inset-0 mx-auto justify-center z-10 overflow-hidden sm:max-w-xl md:max-w-full lg:max-w-screen-xl`}>
           <div className={`flex flex-col lg:mt-0 mt-16 items-center lg:flex-row gap-6 max-w-xl lg:max-w-full`}>
             
-            <div className='w-full lg:w-2/3 mx-auto'>
-              <h1 className={`${jost.variable} font-jost text-off-white mb-6 lg:w-5/6`}>Transparent Fundraising with Blockchain</h1>
-              <p className='mb-4 lg:w-5/6 text-off-white'>A charity fundraising platform leveraging blockchain technology to enable transparent donations and spending.</p>
+            <div className='w-full lg:w-2/3 mx-auto lg:space-y-12 space-y-8'>
+              <h1 className={`${jost.variable} font-jost text-off-white lg:w-5/6`}>Transparent Fundraising With Blockchain</h1>
+              <p className='lg:w-2/3 text-off-white'>A charity fundraising platform leveraging blockchain technology to enable transparent donations and spending.</p>
               <Link href={'/'} aria-label='Link' className='inline-flex items-center hover-underline-animation-w'>
                 <span className='flex gap-2'><p className='text-off-white'>Learn More</p><Image src={'/arrow-right.svg'} alt='question mark' height={14} width={14} /></span>
               </Link>
             </div>
 
-            <div className={`w-full lg:w-1/2`}>
+            <div className={`w-full lg:w-1/3`}>
               <div className='bg-off-white bg-opacity-90 rounded shadow-2xl p-6 sm:p-8 '>
                 <h3 className={`mb-1 sm:mb-3 sm:text-center`}>Create Campaign</h3>
                 <form>
 
                   <div className=''>
-                    <label htmlFor='title' className='inline-block mb-1 px-1'>
+                    <label htmlFor='title' className='inline-block mb-1 px-1 sm:text-sm text-xs'>
                       Title
                     </label>
                     <input 
@@ -65,14 +65,14 @@ const Hero = ({ titleData, createCampaign }) => {
                       placeholder='Title'
                       required
                       type='text'
-                      className='flex-grow w-full py-2 px-4 mb-2 transition duration-200 border-gray-300 border rounded shadow-sm appearance-none focus:outline-none focus:shadow-outline'
+                      className='sm:text-sm text-xs flex-grow w-full py-2 px-4 mb-2 transition duration-200 border-gray-300 border rounded shadow-sm appearance-none focus:outline-none focus:shadow-outline'
                       id='title'
                       name='title'
                     />
                   </div>
 
                   <div className=''>
-                    <label htmlFor='description' className='inline-block mb-1 px-1'>
+                    <label htmlFor='description' className='inline-block mb-1 px-1 sm:text-sm text-xs'>
                       Description
                     </label>
                     <input 
@@ -85,14 +85,14 @@ const Hero = ({ titleData, createCampaign }) => {
                       placeholder='Description'
                       required
                       type='text'
-                      className='flex-grow w-full py-2 px-4 mb-2 transition duration-200 border-gray-300 border rounded shadow-sm appearance-none focus:outline-none focus:shadow-outline'
+                      className='sm:text-sm text-xs flex-grow w-full py-2 px-4 mb-2 transition duration-200 border-gray-300 border rounded shadow-sm appearance-none focus:outline-none focus:shadow-outline'
                       id='description'
                       name='description'
                     />
                   </div>
 
                   <div className=''>
-                    <label htmlFor='amount' className='inline-block mb-1 px-1'>
+                    <label htmlFor='amount' className='inline-block mb-1 px-1 sm:text-sm text-xs'>
                       Target Amount
                     </label>
                     <input 
@@ -105,14 +105,14 @@ const Hero = ({ titleData, createCampaign }) => {
                       placeholder='Amount (ETH)'
                       required
                       type='number'
-                      className='flex-grow w-full py-2 px-4 mb-2 transition duration-200 border-gray-300 border rounded shadow-sm appearance-none focus:outline-none focus:shadow-outline'
+                      className='sm:text-sm text-xs flex-grow w-full py-2 px-4 mb-2 transition duration-200 border-gray-300 border rounded shadow-sm appearance-none focus:outline-none focus:shadow-outline'
                       id='amount'
                       name='amount'
                     />
                   </div>
 
                   <div className=''>
-                    <label htmlFor='date' className='inline-block mb-1 px-1'>
+                    <label htmlFor='date' className='inline-block mb-1 px-1 sm:text-sm text-xs'>
                       Deadline
                     </label>
                     <input 
@@ -125,7 +125,7 @@ const Hero = ({ titleData, createCampaign }) => {
                       placeholder='Date'
                       required
                       type='date'
-                      className='flex-grow w-full py-2 px-4 mb-2 transition duration-200 border-gray-300 border rounded shadow-sm appearance-none focus:outline-none focus:shadow-outline'
+                      className='sm:text-sm text-xs flex-grow w-full py-2 px-4 mb-2 transition duration-200 border-gray-300 border rounded shadow-sm appearance-none focus:outline-none focus:shadow-outline'
                       id='date'
                       name='date'
                     />

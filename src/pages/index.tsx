@@ -51,13 +51,13 @@ const Home: NextPage = () => {
         <Hero titleData={titleData} createCampaign={createCampaign} />
         <div className="relative w-full">
           <Card 
-            title="All Listed Campaigns"
+            title="All Campaigns"
             allcampaign={allcampaign}
             setOpenModel={setOpenModel}
             setDonate={setDonateCampaign}
           />
           <Card
-            title="Your Created Campaigns"
+            title="Your Campaigns"
             allcampaign={usercampaign}
             setOpenModel={setOpenModel}
             setDonate={setDonateCampaign}
